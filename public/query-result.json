@@ -1,0 +1,218 @@
+[
+  {
+    "_updatedAt": "2025-01-12T03:53:00Z",
+    "realPrice": 299,
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-80e6970e1cb65fc13727367d2aa394dd01a097e4-124x124-png",
+        "_type": "reference"
+      }
+    },
+    "discountedPrice": 150,
+    "_rev": "zK1VoWIcb6YAfR4FiFYGSf",
+    "_type": "product",
+    "_id": "02b5fb22-2668-4434-acc8-dd3a3da33bac",
+    "title": "Skinny Fit Jeans",
+    "productId": "2",
+    "_createdAt": "2025-01-07T05:13:53Z"
+  },
+  {
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-0f6d670b5742c830970946f2f5fda830e1aa4bad-124x124-png",
+        "_type": "reference"
+      }
+    },
+    "discountedPrice": 180,
+    "productId": "10",
+    "_rev": "P7X5GnakD2Kl12A70GJzwe",
+    "_id": "0d7e695d-1220-4414-b22f-a3141a831dba",
+    "title": "Gradient Graphic T-shirt",
+    "_createdAt": "2025-01-07T15:42:32Z",
+    "_type": "product",
+    "_updatedAt": "2025-01-12T03:55:17Z",
+    "realPrice": 200
+  },
+  {
+    "_updatedAt": "2025-01-12T03:55:34Z",
+    "realPrice": 280,
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-fb62308b5fa5f6c0d5af2b40e5be28065c42454d-295x298-png",
+        "_type": "reference"
+      }
+    },
+    "productId": "11",
+    "title": "Polo with Tipping Details",
+    "_type": "product",
+    "_id": "1b1c7f3c-6523-4acc-8271-6d6e78657b3d",
+    "discountedPrice": 180,
+    "_createdAt": "2025-01-07T15:43:49Z",
+    "_rev": "XxPo3w1ULx3OwS1Ikccu0k"
+  },
+  {
+    "_id": "2b7cb41b-23d4-4b79-b5cf-4f7b17b84d14",
+    "title": "Polo with Contrast Trims",
+    "_updatedAt": "2025-01-12T03:55:02Z",
+    "_rev": "zK1VoWIcb6YAfR4FiFYPjN",
+    "_type": "product",
+    "productId": "9",
+    "_createdAt": "2025-01-07T15:40:36Z",
+    "realPrice": 170,
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-aee16bf0eb630ce9a22be39441166f97ebf2892a-295x298-png",
+        "_type": "reference"
+      }
+    },
+    "discountedPrice": 151
+  },
+  {
+    "productId": "1",
+    "_rev": "XxPo3w1ULx3OwS1IkcccSA",
+    "_id": "42f1cad4-6129-4ca4-916a-f10725f6ee9e",
+    "_updatedAt": "2025-01-12T03:52:38Z",
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-83445897687adec19b4c390b1c55fa26d6488c70-295x285-png",
+        "_type": "reference"
+      }
+    },
+    "discountedPrice": 180,
+    "_createdAt": "2025-01-07T06:52:04Z",
+    "_type": "product",
+    "title": "T-Shirt with Tape Details",
+    "realPrice": 197
+  },
+  {
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-18be6c1b158aacd1475323d7544d2bf5640a5b4d-295x298-png",
+        "_type": "reference"
+      }
+    },
+    "discountedPrice": 70,
+    "productId": "6",
+    "_type": "product",
+    "_id": "8c3397b7-6c25-4a81-9da2-b5633b94327f",
+    "_updatedAt": "2025-01-12T03:54:08Z",
+    "_createdAt": "2025-01-07T15:30:47Z",
+    "_rev": "P7X5GnakD2Kl12A70GJwpc",
+    "title": "COURAGE GRAPHIC T-SHIRT",
+    "realPrice": 100
+  },
+  {
+    "discountedPrice": 211,
+    "_createdAt": "2025-01-07T15:38:02Z",
+    "title": "FADED SKINNY JEANS",
+    "_updatedAt": "2025-01-12T03:54:51Z",
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-ecff952e7a1d88663639d45021fd0d0e05e08962-295x298-png",
+        "_type": "reference"
+      }
+    },
+    "productId": "8",
+    "_rev": "zK1VoWIcb6YAfR4FiFYOjx",
+    "_type": "product",
+    "_id": "9538ee2f-eb17-408f-9abe-e87e7eb9ee9e",
+    "realPrice": 250
+  },
+  {
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-0bc30969c26b4ec75ce499ec26d6739e8bc57ccc-295x298-png",
+        "_type": "reference"
+      }
+    },
+    "productId": "4",
+    "_createdAt": "2025-01-07T15:25:05Z",
+    "_rev": "P7X5GnakD2Kl12A70GJwcS",
+    "_type": "product",
+    "title": "Sleeve Striped T-Shirt",
+    "_updatedAt": "2025-01-12T03:53:40Z",
+    "discountedPrice": 101,
+    "_id": "acaf8fb7-13d7-42be-8598-c3ae4e67adee",
+    "realPrice": 150
+  },
+  {
+    "_type": "product",
+    "title": "VERTICAL STRIPED SHIRT",
+    "_updatedAt": "2025-01-12T03:53:52Z",
+    "realPrice": 99,
+    "discountedPrice": 81,
+    "productId": "5",
+    "_createdAt": "2025-01-07T15:28:59Z",
+    "_rev": "XxPo3w1ULx3OwS1IkccdZu",
+    "_id": "c2031d06-45f6-47bb-96a9-114f90d2daeb",
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-a92393775ac68636c6e4480e553650d787a2c290-295x298-png",
+        "_type": "reference"
+      }
+    }
+  },
+  {
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-4c4fdacde177e99e48317dfea099b91635bd477d-295x268-png",
+        "_type": "reference"
+      }
+    },
+    "productId": "7",
+    "_createdAt": "2025-01-07T15:32:39Z",
+    "_type": "product",
+    "_id": "c4f16259-3418-4075-bbe1-44591ca67567",
+    "_updatedAt": "2025-01-12T03:54:19Z",
+    "realPrice": 150,
+    "discountedPrice": 100,
+    "_rev": "P7X5GnakD2Kl12A70GJwyO",
+    "title": "LOOSE FIT BERMUDA SHORTS"
+  },
+  {
+    "_rev": "P7X5GnakD2Kl12A70GK0Km",
+    "_type": "product",
+    "_id": "cf4eb8d8-605c-4aee-8985-c7b1824b5e93",
+    "title": "Black Striped T-shirt",
+    "realPrice": 200,
+    "productId": "12",
+    "discountedPrice": 158,
+    "_createdAt": "2025-01-07T15:44:54Z",
+    "_updatedAt": "2025-01-12T03:55:48Z",
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-07dc8647a64f4a93a9d1fbb41e0a81fc940b903d-295x298-png"
+      }
+    }
+  },
+  {
+    "_updatedAt": "2025-01-12T03:53:15Z",
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-d1099f309080d33b61898f41adc03f1c44260a10-124x124-png",
+        "_type": "reference"
+      }
+    },
+    "discountedPrice": 160,
+    "productId": "3",
+    "_createdAt": "2025-01-07T15:22:58Z",
+    "_type": "product",
+    "title": "Checkerered Shirt",
+    "_rev": "XxPo3w1ULx3OwS1IkccczW",
+    "_id": "ef3c4ff7-40df-4cf5-b7a7-29ba8b583008",
+    "realPrice": 260
+  }
+]
