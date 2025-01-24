@@ -51,7 +51,7 @@ const ShopDropdown = () => {
 };
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
   
   
   return (
