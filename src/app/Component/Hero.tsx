@@ -44,8 +44,8 @@ export default function HeroSection() {
             quality={100} // Increase quality (default is 75)
 
             // objectFit="cover"
-            className="relative object-cover w-full h-[900px] md:h-[900px]"
-            loading="eager"
+            className="relative object-cover w-full h-[450px] md:h-[500px]
+            "
           />
 
           <div className="bg-black text-white mt-6 flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4"></div>
