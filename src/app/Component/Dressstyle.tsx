@@ -1,13 +1,15 @@
+
+
 import React from "react";
 import Image from "next/image";
 
 const BrowseByDressStyle = () => {
   // Data for the images and titles
   const dressStyles = [
-    { title: "Casual", imgSrc: "/image-1.png", styles: "w-[407px] h-[289px]" },
-    { title: "Formal", imgSrc: "/image-2.png", styles: "w-[684px] h-[289px]" },
-    { title: "Party", imgSrc: "/image-3.png", styles: "w-[684px] h-[289px]" },
-    { title: "Gym", imgSrc: "/image-4.png", styles: "w-[407px] h-[289px]" },
+    { title: "Casual", imgSrc: "/image-1.png", styles: "w-full h-[289px] sm:h-[200px]" },
+    { title: "Formal", imgSrc: "/image-2.png", styles: "w-full h-[289px] sm:h-[200px]" },
+    { title: "Party", imgSrc: "/image-3.png", styles: "w-full h-[289px] sm:h-[200px]" },
+    { title: "Gym", imgSrc: "/image-4.png", styles: "w-full h-[289px] sm:h-[200px]" },
   ];
 
   return (
@@ -19,7 +21,7 @@ const BrowseByDressStyle = () => {
         </h2>
 
         {/* Image Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 ml-20 mr-20 gap-5 lg:gap-4 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 px-4">
           {dressStyles.map((style, index) => (
             <div
               key={index}
@@ -33,8 +35,8 @@ const BrowseByDressStyle = () => {
                 className="object-cover"
               />
               {/* Title Overlay */}
-              <div className="absolute inset-0 bg-opacity-40 flex">
-                <span className="text-black text-lg lg:text-2xl mt-5 ml-5 font-semibold">
+              <div className="absolute inset-0 bg-opacity-40 flex justify-center items-center">
+                <span className="text-black text-lg lg:text-2xl font-semibold">
                   {style.title}
                 </span>
               </div>
@@ -47,22 +49,4 @@ const BrowseByDressStyle = () => {
 };
 
 export default BrowseByDressStyle;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -122,7 +122,9 @@ const CartPage: React.FC = () => {
               const imageURL = urlFor(item.image).url();
               return (
                 <div key={item.id} className="flex items-center gap-4 border-b pb-4 relative">
-                  <Image src={imageURL} alt={item.name} className="w-24 h-24 rounded-lg object-cover" />
+                  <Image src={imageURL} alt={item.name} className="w-24 h-24 rounded-lg object-cover" 
+                  width={100}
+                  height={100}/>
                   <div className="flex-1">
                     <h3 className="font-semibold text-lg">{item.name}</h3>
                     <p className="text-gray-500 text-sm">{item.category}</p>

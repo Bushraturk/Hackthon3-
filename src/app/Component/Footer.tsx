@@ -1,5 +1,19 @@
 import React from "react";
-import Image from "next/image";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
+
+import {
+  FaPaypal,
+  FaGooglePay,
+  FaApple,
+  FaCcVisa,
+  FaCcMastercard,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -18,37 +32,40 @@ const Footer = () => {
                     to wear. From women to men.
                   </p>{" "}
                 </li>
-                <li className="flex mt-10 gap-3 items-center sm:justify-center sm:items-center">
-                  <Image
-                    src="/1.png"
-                    alt="Twitter"
-                    // layout="fill"
-                    // objectFit="cover"
-                    className="rounded-md"
-                  />
-                  <Image
-                    src="/2.png"
-                    alt="facebook"
-                    // layout="fill"
-                    // objectFit="cover"
-                    className="rounded-md"
-                  />
-                  <Image
-                    src="/3.png"
-                    alt="insta"
-                    // layout="fill"
-                    // objectFit="cover"
-                    className="rounded-md"
-                  />
-                  <Image
-                    src="/4.png"
-                    alt="Github"
-                    // layout="fill"
-                    // objectFit="cover"
-                    className="rounded-md"
-                  />
-                </li>
-               
+                <div className="flex w-full py-4 px-5 mt-0 pt-0 md:h-auto justify-end items-end">
+                  <div className="flex gap-5">
+                    <a
+                      href="#"
+                      className="text-3xl text-blue-500 hover:text-blue-700"
+                    >
+                      <FaFacebook />
+                    </a>
+                    <a
+                      href="#"
+                      className="text-3xl text-pink-500 hover:text-pink-700"
+                    >
+                      <FaInstagram />
+                    </a>
+                    <a
+                      href="#"
+                      className="text-3xl text-blue-400 hover:text-blue-600"
+                    >
+                      <FaTwitter />
+                    </a>
+                    <a
+                      href="#"
+                      className="text-3xl text-black hover:text-gray-800"
+                    >
+                      <FaGithub />
+                    </a>
+                    <a
+                      href="#"
+                      className="text-3xl text-blue-600 hover:text-blue-800"
+                    >
+                      <FaLinkedin />
+                    </a>
+                  </div>
+                </div>
               </nav>
             </div>
             <div className="lg:w-1/6 md:w-1/2 w-full px-4">
@@ -133,8 +150,7 @@ const Footer = () => {
             <div className="lg:w-1/6 md:w-1/2 w-full px-4"></div>
           </div>
         </div>
-                    <div className="h-px bg-gray-300 text-black my-4" />
-
+        <div className="h-px bg-gray-300 text-black my-4" />
 
         {/*  */}
         <div className="bg-[#F2F0F1]">
@@ -143,42 +159,34 @@ const Footer = () => {
               Shop.co © 2000-2023, All Rights Reserved
             </p>
 
-            <div className="flex w-full py-4 px-5 mt-0 pt-0 md:h-auto justify-end items-end">
-              <Image
-                src="/Badge.png"
-                alt="Hero Image"
-                // layout="fill"
-                // objectFit="cover"
-                className="rounded-md"
-              />
-              <Image
-                src="/Badge2.png"
-                alt=""
-                // layout="fill"
-                // objectFit="cover"
-                className="rounded-md"
-              />
-              <Image
-                src="/Badge3.png"
-                alt="Hero Image"
-                // layout="fill"
-                // objectFit="cover"
-                className="rounded-md"
-              />
-              <Image
-                src="/Badge5.png"
-                alt="Hero Image"
-                // layout="fill"
-                // objectFit="cover"
-                className="rounded-md"
-              />
-              <Image
-                src="/Badge6.png"
-                alt="Hero Image"
-                // layout="fill"
-                // objectFit="cover"
-                className="rounded-md"
-              />
+            <div className="flex w-full py-4 px-5 mt-0 pt-0 md:h-auto justify-end items-end gap-5">
+              <a
+                href="#"
+                className="text-3xl text-blue-500 hover:text-blue-700"
+              >
+                <FaPaypal />
+              </a>
+              <a
+                href="#"
+                className="text-3xl text-green-500 hover:text-green-700"
+              >
+                <FaGooglePay />
+              </a>
+              <a href="#" className="text-3xl text-black hover:text-gray-800">
+                <FaApple />
+              </a>
+              <a
+                href="#"
+                className="text-3xl text-blue-700 hover:text-blue-900"
+              >
+                <FaCcVisa />
+              </a>
+              <a
+                href="#"
+                className="text-3xl text-blue-600 hover:text-blue-800"
+              >
+                <FaCcMastercard />
+              </a>
             </div>
           </div>
         </div>
