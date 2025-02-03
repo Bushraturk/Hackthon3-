@@ -1,5 +1,8 @@
+
+
 import React from "react";
 import { RxCross1 } from "react-icons/rx";
+import { SignUpButton } from "@clerk/nextjs";
 
 export default function TopHeader() {
   return (
@@ -9,9 +12,12 @@ export default function TopHeader() {
         {/* Left Side: Sale Message */}
         <p className="text-sm sm:text-base lg:ml-40 text-center sm:text-left leading-relaxed flex-1">
           Sign up and get <span className="font-bold">20% off</span> on your first order.{" "}
-          <span className="font-bold ml-1 cursor-pointer underline hover:text-gray-300">
-            Sign Up Now
-          </span>
+          {/* Wrap this part with SignUpButton */}
+          <SignUpButton>
+            <span className="font-bold ml-1 cursor-pointer underline hover:text-gray-300">
+              Sign Up Now
+            </span>
+          </SignUpButton>
         </p>
 
         {/* Close Icon */}
@@ -26,7 +32,6 @@ export default function TopHeader() {
     </div>
   );
 }
-
 
 
 

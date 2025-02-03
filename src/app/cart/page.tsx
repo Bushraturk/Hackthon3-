@@ -1,3 +1,5 @@
+
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -24,56 +26,59 @@ type Product = {
 };
 
 const CartPage: React.FC = () => {
-  const [cartItems, setCartItems] = useState<Product[]>([]); 
-  const [loading, setLoading] = useState(true); 
-  const router = useRouter(); 
+  const [cartItems, setCartItems] = useState<Product[]>([]); // Cart items state
+  const [loading, setLoading] = useState(true); // Loading state
+  const router = useRouter(); // Router to navigate to checkout
 
+  // Fetch cart items from localStorage on component mount
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem('cart') || '[]');
     if (storedCart.length) {
-      setCartItems(storedCart); 
+      setCartItems(storedCart);
     }
-    setLoading(false); 
+    setLoading(false);
   }, []);
 
+  // Handle quantity change (increment/decrement)
   const handleQuantityChange = (index: number, type: 'increment' | 'decrement') => {
-    const updatedCartItems = [...cartItems]; 
-    const item = updatedCartItems[index]; 
+    const updatedCartItems = [...cartItems];
+    const item = updatedCartItems[index];
 
     if (type === 'increment') {
-      item.quantity += 1; 
+      item.quantity += 1;
     } else if (type === 'decrement' && item.quantity > 1) {
-      item.quantity -= 1; 
+      item.quantity -= 1;
     }
 
-    setCartItems(updatedCartItems); 
-    localStorage.setItem('cart', JSON.stringify(updatedCartItems)); 
+    setCartItems(updatedCartItems);
+    localStorage.setItem('cart', JSON.stringify(updatedCartItems));
   };
 
+  // Remove item from the cart
   const handleRemoveItem = (index: number) => {
-    const updatedCartItems = cartItems.filter((_, i) => i !== index); 
-    setCartItems(updatedCartItems); 
-    localStorage.setItem('cart', JSON.stringify(updatedCartItems)); 
+    const updatedCartItems = cartItems.filter((_, i) => i !== index);
+    setCartItems(updatedCartItems);
+    localStorage.setItem('cart', JSON.stringify(updatedCartItems));
   };
 
+  // Calculate the subtotal of the cart
   const calculateSubtotal = () => {
     return cartItems.reduce((acc, item) => {
-      // Check if price and quantity are valid numbers
       const price = Number(item.price);
       const quantity = Number(item.quantity);
       if (!isNaN(price) && !isNaN(quantity)) {
         return acc + price * quantity;
       }
-      return acc; // If any value is invalid, skip the item
+      return acc;
     }, 0);
   };
 
+  // Calculate total discount
   const calculateDiscount = () => {
     return cartItems.reduce((acc, item) => {
       const price = Number(item.price);
       const discountPercent = Number(item.discountPercent);
       const quantity = Number(item.quantity);
-      // Ensure valid number before calculation
       if (!isNaN(price) && !isNaN(discountPercent) && !isNaN(quantity)) {
         return acc + (price * discountPercent * quantity) / 100;
       }
@@ -81,25 +86,27 @@ const CartPage: React.FC = () => {
     }, 0);
   };
 
+  // Calculate final total
   const calculateTotal = () => {
     const subtotal = calculateSubtotal();
     const discount = calculateDiscount();
     const deliveryFee = 15; // Fixed delivery fee
-    // Ensure subtotal and discount are valid numbers
     if (!isNaN(subtotal) && !isNaN(discount)) {
       return subtotal - discount + deliveryFee;
     }
-    return 0; // Return 0 if any value is invalid
+    return 0;
   };
 
+  // Redirect to checkout page
   const handleCheckout = () => {
-    alert('Proceeding to checkout...'); 
-    router.push('/checkout'); 
+    router.push('/Checkout');
   };
 
   if (loading) {
-    return <p>Loading...</p>; 
+    return <p>Loading...</p>;
   }
+
+  const total = calculateTotal();
 
   return (
     <section className="p-6 bg-gray-100">
@@ -107,9 +114,7 @@ const CartPage: React.FC = () => {
         <nav className="ml-4 sm:ml-20 text-sm text-gray-700 mb-4">
           <ol className="flex space-x-2">
             <li>Home</li>
-            <li>
-              <FaAngleRight size={20} />
-            </li>
+            <li><FaAngleRight size={20} /></li>
             <li>Cart</li>
           </ol>
         </nav>
@@ -119,16 +124,28 @@ const CartPage: React.FC = () => {
             <p className="text-center text-gray-500">Your cart is empty.</p>
           ) : (
             cartItems.map((item, index) => {
-              const imageURL = urlFor(item.image).url();
+              const imageURL = item.image?.asset?._ref 
+                ? urlFor(item.image).url() 
+                : '/path/to/fallback-image.jpg'; // Fallback image if no image URL exists
+
+              // Total price for the product
+              const productTotal = (item.price * item.quantity).toFixed(2);
+
               return (
                 <div key={item.id} className="flex items-center gap-4 border-b pb-4 relative">
-                  <Image src={imageURL} alt={item.name} className="w-24 h-24 rounded-lg object-cover" 
-                  width={100}
-                  height={100}/>
+                  <Image 
+                    src={imageURL} 
+                    alt={item.name} 
+                    className="w-24 h-24 rounded-lg object-cover" 
+                    width={100} 
+                    height={100}
+                  />
                   <div className="flex-1">
                     <h3 className="font-semibold text-lg">{item.name}</h3>
                     <p className="text-gray-500 text-sm">{item.category}</p>
                     <p className="mt-2 font-semibold">${item.price}</p>
+                    {/* Show total price for this product */}
+                    <p className="text-sm text-gray-600">Total: ${productTotal}</p>
                   </div>
                   <div className="absolute top-0 right-0">
                     <button onClick={() => handleRemoveItem(index)} className="text-red-500">
@@ -137,8 +154,9 @@ const CartPage: React.FC = () => {
                   </div>
                   <div className="flex mt-4 bg-gray-100 border rounded-lg items-center gap-2 px-3 py-1">
                     <button
-                      className="text-gray-500 border rounded px-3 py-1"
+                      className={`text-gray-500 border rounded px-3 py-1 ${item.quantity <= 1 ? 'cursor-not-allowed' : ''}`}
                       onClick={() => handleQuantityChange(index, 'decrement')}
+                      disabled={item.quantity <= 1}
                     >
                       -
                     </button>
@@ -174,7 +192,7 @@ const CartPage: React.FC = () => {
             <hr />
             <div className="flex justify-between font-bold text-xl">
               <span>Total</span>
-              <span>${calculateTotal().toFixed(2)}</span>
+              <span>${total.toFixed(2)}</span>
             </div>
           </div>
 
@@ -182,12 +200,17 @@ const CartPage: React.FC = () => {
             <input type="radio" id="cod" name="payment" value="cash-on-delivery" defaultChecked />
             <label htmlFor="cod" className="ml-2 text-lg font-medium">Cash on Delivery</label>
           </div>
-          <button
-            className="w-full bg-black text-white rounded p-3 mt-4 hover:bg-gray-800 transition"
-            onClick={handleCheckout}
-          >
-            Proceed to Checkout →
-          </button>
+
+          {/* Checkout Button */}
+          <div>
+            <button 
+              className={`w-full bg-black text-white rounded p-3 mt-4 hover:bg-gray-800 transition ${total > 0 ? '' : 'cursor-not-allowed opacity-50'}`}
+              onClick={handleCheckout}
+              disabled={total <= 0} // Disable button if total is 0
+            >
+              Proceed to Checkout →
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -195,4 +218,7 @@ const CartPage: React.FC = () => {
 };
 
 export default CartPage;
+
+
+
 
